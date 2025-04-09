@@ -55,8 +55,8 @@ github.com/gabriel-vasile/mimetype/internal/magic
 # github.com/gin-contrib/cors v1.7.5
 ## explicit; go 1.23.0
 github.com/gin-contrib/cors
-# github.com/gin-contrib/sessions v1.0.2
-## explicit; go 1.20
+# github.com/gin-contrib/sessions v1.0.3
+## explicit; go 1.23.0
 github.com/gin-contrib/sessions
 github.com/gin-contrib/sessions/cookie
 # github.com/gin-contrib/sse v1.0.0
@@ -102,8 +102,8 @@ github.com/gorilla/context
 # github.com/gorilla/securecookie v1.1.2
 ## explicit; go 1.20
 github.com/gorilla/securecookie
-# github.com/gorilla/sessions v1.2.2
-## explicit; go 1.20
+# github.com/gorilla/sessions v1.4.0
+## explicit; go 1.23
 github.com/gorilla/sessions
 # github.com/joho/godotenv v1.5.1
 ## explicit; go 1.12
@@ -158,10 +158,10 @@ github.com/twitchyliquid64/golang-asm/unsafeheader
 # github.com/ugorji/go/codec v1.2.12
 ## explicit; go 1.11
 github.com/ugorji/go/codec
-# golang.org/x/arch v0.15.0
+# golang.org/x/arch v0.16.0
 ## explicit; go 1.23.0
 golang.org/x/arch/x86/x86asm
-# golang.org/x/crypto v0.36.0
+# golang.org/x/crypto v0.37.0
 ## explicit; go 1.23.0
 golang.org/x/crypto/sha3
 # golang.org/x/net v0.38.0
@@ -180,11 +180,11 @@ golang.org/x/oauth2
 golang.org/x/oauth2/endpoints
 golang.org/x/oauth2/github
 golang.org/x/oauth2/internal
-# golang.org/x/sys v0.31.0
+# golang.org/x/sys v0.32.0
 ## explicit; go 1.23.0
 golang.org/x/sys/cpu
 golang.org/x/sys/unix
-# golang.org/x/text v0.23.0
+# golang.org/x/text v0.24.0
 ## explicit; go 1.23.0
 golang.org/x/text/internal/language
 golang.org/x/text/internal/language/compact

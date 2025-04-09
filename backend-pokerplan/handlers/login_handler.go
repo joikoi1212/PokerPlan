@@ -3,31 +3,29 @@ package handlers
 import (
 	"crypto/rand"
 	"encoding/base64"
-	"fmt"
 	"net/http"
 
-	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"golang.org/x/oauth2"
 	oauth2github "golang.org/x/oauth2/github"
 )
 
 var oauth2Config = &oauth2.Config{
-	ClientID:     "",
-	ClientSecret: "7d7af4243f6ebd86c80e56d38b2d08f7d0a91d5f",
+	ClientID:     "Ov23liIn3aTcuubUuzs4",
+	ClientSecret: "3bfef7fb7e9af47c29aab5425fa6fb66bd64f851",
 	Endpoint:     oauth2github.Endpoint,
 	RedirectURL:  "http://localhost:8080/callback",
 	Scopes:       []string{"read:org", "user"},
 }
 
 func LoginHandler(c *gin.Context) {
-	fmt.Printf("Request: %+v\n", c.Request)
-	oauth2config.ClientID = c.Query("client_id")
+	oauth2Config.ClientID = "Ov23liIn3aTcuubUuzs4"
 	state := generateState()
-	session := sessions.Default(c)
-	session.Set("state", state)
+	//session := sessions.Default(c)
+	//session.Set("state", []byte("123"))
+	//session.Save()
 	url := oauth2Config.AuthCodeURL(state)
-	c.Redirect(http.StatusFound, url)<
+	c.Redirect(http.StatusFound, url)
 }
 
 func generateState() string {

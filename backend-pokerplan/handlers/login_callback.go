@@ -2,9 +2,9 @@ package handlers
 
 import (
 	"context"
+	"fmt"
 	"net/http"
 
-	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"github.com/google/go-github/v70/github"
 	"golang.org/x/oauth2"
@@ -17,6 +17,9 @@ func CallbackHandler(c *gin.Context) {
 	token, err := oauth2Config.Exchange(c.Request.Context(), code)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to exchange token"})
+		fmt.Println(err)
+		fmt.Println("###############################")
+		fmt.Println("###################################       ", code)
 		return
 	}
 
@@ -26,13 +29,8 @@ func CallbackHandler(c *gin.Context) {
 		return
 	}
 
-	session := sessions.Default(c)
-	session.Set("userID", *githubUser.Login)
-	session.Set("Name", *githubUser.Name)
-	if err := session.Save(); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save session"})
-		return
-	}
+	fmt.Println("User ID:", *githubUser.Login)
+	fmt.Println("User Name:", *githubUser.Name)
 
 	c.Redirect(http.StatusFound, "http://localhost:5173/dashboard")
 
